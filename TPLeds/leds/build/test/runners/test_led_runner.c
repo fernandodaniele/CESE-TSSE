@@ -10,7 +10,15 @@ char* GlobalOrderError;
 /*=======External Functions This Runner Calls=====*/
 extern void setUp(void);
 extern void tearDown(void);
-extern void test_inicializacion(void);
+extern void test_LedsOffAfterCreate (void);
+extern void test_TurnOnfIndividualLed(void);
+extern void test_TurnOffIndividualLed(void);
+extern void test_TurnOnOffIndividualLed(void);
+extern void test_TurnAllOn(void);
+extern void test_TurnAllOff(void);
+extern void test_LedStateOff(void);
+extern void test_LedStateOn(void);
+extern void test_LedInvalid(void);
 
 
 /*=======Mock Management=====*/
@@ -26,9 +34,6 @@ static void CMock_Verify(void)
 static void CMock_Destroy(void)
 {
 }
-
-/*=======Setup (stub)=====*/
-void setUp(void) {}
 
 /*=======Teardown (stub)=====*/
 void tearDown(void) {}
@@ -81,7 +86,15 @@ static void run_test(UnityTestFunction func, const char* name, int line_num)
 int main(void)
 {
   UnityBegin("test_led.c");
-  run_test(test_inicializacion, "test_inicializacion", 3);
+  run_test(test_LedsOffAfterCreate , "test_LedsOffAfterCreate ", 29);
+  run_test(test_TurnOnfIndividualLed, "test_TurnOnfIndividualLed", 37);
+  run_test(test_TurnOffIndividualLed, "test_TurnOffIndividualLed", 44);
+  run_test(test_TurnOnOffIndividualLed, "test_TurnOnOffIndividualLed", 52);
+  run_test(test_TurnAllOn, "test_TurnAllOn", 61);
+  run_test(test_TurnAllOff, "test_TurnAllOff", 67);
+  run_test(test_LedStateOff, "test_LedStateOff", 74);
+  run_test(test_LedStateOn, "test_LedStateOn", 79);
+  run_test(test_LedInvalid, "test_LedInvalid", 85);
 
   return UnityEnd();
 }
