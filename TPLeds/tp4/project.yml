@@ -98,6 +98,7 @@
 :plugins:
   :load_paths:
     - "#{Ceedling.load_path}"
+    - test/support
   :enabled:
     - stdout_pretty_tests_report
     - module_generator

@@ -40,7 +40,8 @@ void setUp (void)
 
 void test_uno (void)
 {
-    muestraPantalla_fake.custom_fake = muestraPantallaAux;
+    //muestraPantalla_fake.custom_fake = muestraPantallaAux;
     actualizarMEF(1);
-    TEST_ASSERT_EQUAL(PANTALLA_B, estadoPantalla);
+    //TEST_ASSERT_EQUAL(PANTALLA_B, estadoPantalla);
+    TEST_ASSERT_EQUAL(1, prenderLed_fake.call_count);
 }

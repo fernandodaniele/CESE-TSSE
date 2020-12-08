@@ -95,4 +95,4 @@ int main(void)
 
 //=======Defintions of FFF variables=====
 #include "fff.h"
-DEFINE_FFF_GLOBALS;
+DEFINE_FFF_GLOBALS

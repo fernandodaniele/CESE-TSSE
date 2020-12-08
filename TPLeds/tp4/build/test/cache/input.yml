@@ -205,6 +205,7 @@
   :arguments: []
 :plugins:
   :load_paths:
+  - test/support
   - "/var/lib/gems/2.5.0/gems/ceedling-0.30.0/lib/../plugins"
   :enabled:
   - stdout_pretty_tests_report

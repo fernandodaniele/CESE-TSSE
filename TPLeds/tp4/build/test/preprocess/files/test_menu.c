@@ -81,14 +81,16 @@ void test_uno (void)
 
 {
 
-    muestraPantalla_fake.custom_fake = muestraPantallaAux;
+
 
     actualizarMEF(1);
 
-    UnityAssertEqualNumber((UNITY_INT)((PANTALLA_B)), (UNITY_INT)((estadoPantalla)), (
+
+
+    UnityAssertEqualNumber((UNITY_INT)((1)), (UNITY_INT)((prenderLed_fake.call_count)), (
 
    ((void *)0)
 
-   ), (UNITY_UINT)(45), UNITY_DISPLAY_STYLE_INT);
+   ), (UNITY_UINT)(46), UNITY_DISPLAY_STYLE_INT);
 
 }
