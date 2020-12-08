@@ -2,12 +2,6 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-//Definiciones y macros
-#define LED_OFF         0
-#define LED_ON          1
-#define LEDS_ALL_OFF    0x0000
-#define LEDS_ALL_ON     0xFFFF
-
 //Tipos de datos y de funciones
 typedef void (*LedError_t)(void);
 

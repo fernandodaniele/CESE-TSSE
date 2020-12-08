@@ -1,15 +1,27 @@
 /*
-*
+	Trabajo práctico 4 de Testing de Software en Sistemas Embebidos
+	Especialización en Sistemas Embebidos - 12va cohorte - UBA
+	Autor: Ing. Fernando Ezequiel Daniele	
 */
+
+/***************************************************************************
+								Inclusiones
+***************************************************************************/
 #include <unity.h>
 #include "menu.h"
 #include "Mockpantalla.h"
 #include "Mockled.h"
 #include <stdbool.h>
 
+/***************************************************************************
+				    		Variables globales
+***************************************************************************/
 static pantalla_t estadoPantalla;
 static bool estadoLed;
 
+/***************************************************************************
+					Funciones auxiliares para el uso de FFF
+***************************************************************************/
 void muestraPantallaAux(pantalla_t pant)
 {
     estadoPantalla  = pant;
@@ -31,6 +43,9 @@ void apagarLedAux(char letra)
     }
 }
 
+/***************************************************************************
+							Inicialización
+***************************************************************************/
 void setUp (void)
 {
     iniciarMEF();
@@ -38,6 +53,10 @@ void setUp (void)
     estadoPantalla = PANTALLA_A;   
 }
 
+/***************************************************************************
+	Test scripts para cada caso de prueba legal (Ver documento Pruebas de 
+    sistema y de aceptación del Sistema Embebido para Titulador Automático)
+***************************************************************************/
 void test_L1 (void)
 {
     muestraPantalla_fake.custom_fake = muestraPantallaAux;

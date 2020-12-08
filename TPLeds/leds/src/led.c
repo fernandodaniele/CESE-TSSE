@@ -5,6 +5,11 @@
 //Definiciones y macros
 #define LSB 1
 #define LED_OFFSET 1
+#define LED_OFF         0
+#define LED_ON          1
+#define LEDS_ALL_OFF    0x0000
+#define LEDS_ALL_ON     0xFFFF
+#define TOTAL_LEDS      16
 
 //Definición de variables privadas
 static uint16_t * address;
@@ -21,7 +26,7 @@ static void LedsHardwareUpdate(void) {
 //Función para enmascarar un led
 uint16_t LedToMasK (uint8_t led)
 {
-    if (led >16)
+    if (led >TOTAL_LEDS)
     {
         ErrorRecord();
         return 0;

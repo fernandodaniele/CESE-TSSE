@@ -10,6 +10,13 @@
 #include "led.h"
 //#include "mock_errores.h"
 
+//Definiciones y macros
+#define LEDS_ALL_OFF    0x0000
+#define LEDS_ALL_ON     0xFFFF
+#define LED_OFF         0
+#define LED_ON          1
+
+//Variables globales
 uint16_t vLeds;
 
 bool errorInfo = false;
@@ -37,7 +44,7 @@ void test_LedsOffAfterCreate (void)
 void test_TurnOnfIndividualLed(void)
 {
     LedOn(1);
-    TEST_ASSERT_EQUAL_HEX16 (LED_ON,vLeds);
+    TEST_ASSERT_EQUAL_HEX16 (0x0001,vLeds);
 }
 
 //Se puede apagar un led individual
@@ -45,7 +52,7 @@ void test_TurnOffIndividualLed(void)
 {
     LedOn(1);
     LedOff(1);
-    TEST_ASSERT_EQUAL_HEX16 (LED_OFF,vLeds);
+    TEST_ASSERT_EQUAL_HEX16 (0x0000,vLeds);
 }
 
 //Se pueden prender y apagar múltiples led
